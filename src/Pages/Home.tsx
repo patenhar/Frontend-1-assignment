@@ -4,6 +4,7 @@ import ProductForm from "../Components/ProductForm";
 import TotalProducts from "../Components/TotalProducts";
 import TotalInventoryValue from "../Components/TotalInventoryValue";
 import LowStockAlert from "../Components/LowStockAlert";
+import OutOfStockOverlay from "../Components/OutOfStockOverlay";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -32,6 +33,8 @@ export default function Home() {
         <option value="Dairy">Dairy</option>
         <option value="Electronics">Electronics</option>
       </select>
+
+      <OutOfStockOverlay />
 
       <div className="flex w-full gap-10">
         <TotalProducts />
