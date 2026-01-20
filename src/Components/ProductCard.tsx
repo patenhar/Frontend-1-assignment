@@ -1,5 +1,6 @@
 import type { UUID } from "crypto";
 import React from "react";
+import { toast } from "react-toastify";
 
 interface ProductCardProps {
   id: UUID;
@@ -21,6 +22,7 @@ export default function ProductCard({
   const removeProduct = (e) => {
     console.log(id);
     if (localStorage.getItem(id)) localStorage.removeItem(id);
+    toast.success("Deleted");
   };
   return (
     <div className="bg-gray-100 w-70 flex flex-col items-center border-0 rounded-sm">

@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className="md:container md:mx-auto flex justify-between">
           <div className="flex gap-2 items-center">
             <div>Home</div>
-            <div>Add new product</div>
+            <div>Something</div>
           </div>
           <div className="flex gap-2">
             <a className="p-2 border-0 rounded-sm">Login</a>
