@@ -1,6 +1,8 @@
+import type { UUID } from "crypto";
 import React from "react";
 
 interface ProductCardProps {
+  id: UUID;
   imageUrl: string;
   title: string;
   description: string;
@@ -9,12 +11,17 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({
+  id,
   imageUrl,
   title,
   description,
   price,
   quantity,
 }: ProductCardProps) {
+  const removeProduct = (e) => {
+    console.log(id);
+    if (localStorage.getItem(id)) localStorage.removeItem(id);
+  };
   return (
     <div className="bg-gray-100 w-70 flex flex-col items-center border-0 rounded-sm">
       <div className="border-0 rounded-sm relative">
@@ -44,7 +51,11 @@ export default function ProductCard({
           <button className="bg-green-500 text-white border-0 rounded-sm p-2 w-full cursor-pointer">
             Edit
           </button>
-          <button className="bg-red-500 text-white border-0 rounded-sm p-2 w-full cursor-pointer">
+          <button
+            onClick={removeProduct}
+            id={id}
+            className="bg-red-500 text-white border-0 rounded-sm p-2 w-full cursor-pointer"
+          >
             Delete
           </button>
         </div>
