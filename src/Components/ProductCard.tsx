@@ -1,6 +1,7 @@
 import type { UUID } from "crypto";
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
+import EditProduct from "./EditProduct";
 
 interface ProductCardProps {
   id: UUID;
@@ -19,6 +20,10 @@ export default function ProductCard({
   price,
   quantity,
 }: ProductCardProps) {
+  // const updateProduct = (e) => {
+  //   const product = localStorage.getItem(id);
+  //   if (product) <EditProduct product={JSON.parse(product)} />;
+  // };
   const removeProduct = (e) => {
     console.log(id);
     if (localStorage.getItem(id)) localStorage.removeItem(id);
@@ -49,10 +54,10 @@ export default function ProductCard({
         <h1 className="font-bold">{title}</h1>
         <p>{description}</p>
         <h5>$ {price}</h5>
+        <h5>{quantity}</h5>
+
         <div className="flex w-full gap-2">
-          <button className="bg-green-500 text-white border-0 rounded-sm p-2 w-full cursor-pointer">
-            Edit
-          </button>
+          <EditProduct product={JSON.parse(localStorage.getItem(id))} />
           <button
             onClick={removeProduct}
             id={id}
