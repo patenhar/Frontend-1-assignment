@@ -40,9 +40,14 @@ export default function ProductCard({
         <h1 className="font-bold">{title}</h1>
         <p>{description}</p>
         <h5>$ {price}</h5>
-        <button className="bg-blue-500 text-white border-0 rounded-sm p-2 w-full cursor-pointer">
-          Buy Now
-        </button>
+        <div className="flex w-full gap-2">
+          <button className="bg-green-500 text-white border-0 rounded-sm p-2 w-full cursor-pointer">
+            Edit
+          </button>
+          <button className="bg-red-500 text-white border-0 rounded-sm p-2 w-full cursor-pointer">
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -6,8 +6,8 @@ export default function Navbar() {
       <nav className="bg-gray-100 p-2">
         <div className="md:container md:mx-auto flex justify-between">
           <div className="flex gap-2 items-center">
-            <div>Something</div>
-            <div>Something</div>
+            <div>Home</div>
+            <div>Add new product</div>
           </div>
           <div className="flex gap-2">
             <a className="p-2 border-0 rounded-sm">Login</a>
